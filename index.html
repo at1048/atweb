@@ -1,544 +1,60 @@
 <html>
-<head> 
-<title> Aditya Tiwari </title>
+<head>
+<title> Radio Adhyatma Jyoti 104.8 MHz </title>
 </head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <style>
+            body,
+            h1,
+            h2 {
+                font-family: "Raleway", sans-serif
+            }
+
+            body,
+            html {
+                height: 100%
+            }
+
+            p {
+                line-height: 2
+            }
+
+            .bgimg,
+            .bgimg2 {
+                min-height: 100%;
+                background-position: center;
+                background-size: cover;
+            }
+
+            .bgimg {
+                background-image: url("images/radio.jpg")
+            }
+
+            .bgimg2 {
+                background-image: url("")
+            }
+        </style>
+    </head>
 <body>
-<h1> <! DOCTYPE html>  
-<html lang = "en">  
-<head>  
-  <meta charset = "UTF-8">  
-  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">  
-  <meta http-equiv = "X-UA-Compatible" content = "ie=edge">  
-  <title> DIGITAL CLOCK  
- </title>  
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>  
-        <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"> </script>   
-<style>  
-body {  
-text-align: center;  
-}  
-a {  
-    outline: none;  
-    color: #389dc1;  
-}  
-a:visited {  
-    outline: none;  
-    color: #389dc1;  
-}  
-a:hover {  
-    text-decoration: none;  
-}  
-section, footer, header, aside {  
-    display: block;  
-}  
-#clock {  
-    width: 370px;  
-    padding: 40px;  
-    margin: 100px auto 60px;  
-    position: relative;  
-}  
-#clock:after {  
-    content: ' ';  
-    position: absolute;  
-    width: 400px;  
-    height: 20px;  
-    border-radius: 100%;  
-    left: 50%;  
-    margin-left: -200px;  
-    bottom: 2px;  
-    z-index: -1;  
-}  
-#clock .display {  
-    text-align: center;  
-    padding: 40px 20px 20px;  
-    border-radius: 6px;  
-    position: relative;  
-    height: 54px;  
-}  
-#clock.light {  
-    background-color: #f3f3f3;  
-    color: #272e38;  
-}  
-#clock.light:after {  
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);  
-}  
-#clock.light .digits div span {  
-    background-color: #272e38;  
-    border-color: #272e38;    
-}  
-#clock.light .digits div.dots:before {  
-    background-color: #272e38;  
-}  
-#clock.light .digits div.dots:after {  
-    background-color: #272e38;  
-}  
-#clock.light .alarm {  
-    background:url('../img/alarm_light.jpg');  
-}  
-#clock.light .display {  
-    background-color: #dddddd;  
-    box-shadow: 0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #fafafa;  
-}  
-#clock.dark {  
-    background-color: #272e38;  
-    color: #cacaca;  
-}  
-#clock.dark:after {  
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);  
-}  
-#clock.dark .digits div span {  
-    background-color: #cacaca;  
-    border-color: #cacaca;    
-}  
-#clock.dark .alarm {  
-    background:url('../img/alarm_dark.jpg');  
-}  
-#clock.dark .display {  
-    background-color: #0f1620;  
-    box-shadow: 0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #2d3642;  
-}  
-#clock.dark .digits div.dots:before {  
-    background-color: #cacaca;  
-}  
-#clock.dark .digits div.dots:after {  
-    background-color: #cacaca;  
-}  
-#clock .digits div {  
-    text-align: left;  
-    position: relative;  
-    width: 28px;  
-    height: 50px;  
-    display: inline-block;  
-    margin: 0 4px;  
-}  
-#clock .digits div span {  
-    opacity: 0;  
-    position: absolute;  
-    -webkit-transition: 0.25s;  
-    -moz-transition: 0.25s;  
-    transition: 0.25s;  
-}  
-#clock .digits div span:before {  
-    content: ' ';  
-    position: absolute;  
-    width: 0;  
-    height: 0;  
-    border: 5px solid transparent;  
-}  
-#clock .digits div span:after {  
-    content: ' ';  
-    position: absolute;  
-    width: 0;  
-    height: 0;  
-    border: 5px solid transparent;  
-}  
-  
-#clock .digits .d1 {              
-height: 5px;  
-width: 16px;  
-top: 0;  
-left: 6px; }  
-#clock .digits .d1:before {   
-border-width: 0 5px 5px 0;  
-border-right-color: inherit;  
-left: -5px; }  
-#clock .digits .d1:after {    
-border-width: 0 0 5px 5px;  
-border-left-color: inherit; right: -5px;  
-}  
-#clock .digits .d2 {              
-height: 5px;  
-width: 16px;  
-top: 24px;  
-left: 6px; }  
-#clock .digits .d2:before {   
-border-width: 3px 4px 2px;  
-border-right-color: inherit;  
-left: -8px; }  
-#clock .digits .d2:after {    
-border-width: 3px 4px 2px;  
-border-left-color: inherit;  
-right: -8px; }  
-#clock .digits .d3 {              
-height: 5px;  
-width: 16px;  
-top: 48px;   
-left: 6px; }  
-#clock .digits .d3:before {   
-border-width: 5px 5px 0 0;  
-border-right-color: inherit;  
-left: -5px; }  
-#clock .digits .d3:after {    
-border-width: 5px 0 0 5px;  
-border-left-color: inherit; right: -5px; }  
-  
-#clock .digits .d4 {              
-width: 5px;  
-height: 14px;   
-top: 7px; left: 0;   
-}  
-#clock .digits .d4:before {   
-border-width: 0 5px 5px 0;  
-border-bottom-color: inherit;  
-top: -5px; }  
-#clock .digits .d4:after {   
-border-width: 0 0 5px 5px;  
-border-left-color: inherit;  
-bottom: -5px; }  
-#clock .digits .d5 {              
-width: 5px;  
-height: 14px;   
-top: 7px;   
-right: 0; }  
-#clock .digits .d5:before {   
-border-width: 0 0 5px 5px;  
-border-bottom-color: inherit;   
-top: -5px; }  
-#clock .digits .d5:after {    
-border-width: 5px 0 0 5px;   
-border-top-color: inherit;  
-bottom: -5px; }  
-#clock .digits .d6 {              
-width: 5px;  
-height: 14px;  
-top: 32px;   
-left: 0; }  
-#clock .digits .d6:before {   
-border-width: 0 5px 5px 0;  
-border-bottom-color: inherit;  
-top: -5px; }  
-#clock .digits .d6:after {    
-border-width: 0 0 5px 5px;  
-border-left-color: inherit;  
-bottom: -5px; }  
-#clock .digits .d7 {              
-width: 5px;  
-height: 14px;   
-top: 32px;  
-right: 0; }  
-#clock .digits .d7:before {   
-border-width: 0 0 5px 5px;  
-border-bottom-color: inherit;   
-top: -5px; }  
-#clock .digits .d7:after {    
-border-width: 5px 0 0 5px;  
-border-top-color: inherit;  
-bottom: -5px; }  
-#clock .digits div.one .d5 {  
-    opacity: 1;  
-}  
-#clock .digits div.one .d7 {  
-    opacity: 1;  
-}  
-#clock .digits div.two .d1 {  
-    opacity: 1;  
-}  
-#clock .digits div.two .d5 {  
-    opacity: 1;  
-}  
-#clock .digits div.two .d2 {  
-    opacity: 1;  
-}  
-#clock .digits div.two .d6 {  
-    opacity: 1;  
-}  
-#clock .digits div.two .d3 {  
-    opacity: 1;  
-}  
-#clock .digits div.three .d1,  
-#clock .digits div.three .d5,  
-#clock .digits div.three .d2,  
-#clock .digits div.three .d7,  
-#clock .digits div.three .d3 {  
-    opacity: 1;  
-}  
-#clock .digits div.four .d5,  
-#clock .digits div.four .d2,  
-#clock .digits div.four .d4,  
-#clock .digits div.four .d7 {  
-    opacity: 1;  
-}  
-#clock .digits div.five .d1,  
-#clock .digits div.five .d2,  
-#clock .digits div.five .d4,  
-#clock .digits div.five .d3,  
-#clock .digits div.five .d7 {  
-    opacity: 1;  
-}  
-#clock .digits div.six .d1,  
-#clock .digits div.six .d2,  
-#clock .digits div.six .d4,  
-#clock .digits div.six .d3,  
-#clock .digits div.six .d6,  
-#clock .digits div.six .d7 {  
-    opacity: 1;  
-}  
-  
-  
-  
-#clock .digits div.seven .d1,  
-#clock .digits div.seven .d5,  
-#clock .digits div.seven .d7 {  
-    opacity: 1;  
-}  
-#clock .digits div.eight .d1,  
-#clock .digits div.eight .d2,  
-#clock .digits div.eight .d3,  
-#clock .digits div.eight .d4,  
-#clock .digits div.eight .d5,  
-#clock .digits div.eight .d6,  
-#clock .digits div.eight .d7 {  
-    opacity: 1;  
-}  
-#clock .digits div.nine .d1,  
-#clock .digits div.nine .d2,  
-#clock .digits div.nine .d3,  
-#clock .digits div.nine .d4,  
-#clock .digits div.nine .d5,  
-#clock .digits div.nine .d7 {  
-    opacity: 1;  
-}  
-#clock .digits div.zero .d1,  
-#clock .digits div.zero .d3 {  
-    opacity: 1;  
-}  
-#clock .digits div.zero .d4 {  
-    opacity: 1;  
-}  
-#clock .digits div.zero .d5 {  
-    opacity: 1;  
-}  
-#clock .digits div.zero .d6 {  
-    opacity: 1;  
-}  
-#clock .digits div.zero .d7 {  
-    opacity: 1;  
-}  
-#clock .digits div.dots {  
-    width: 5px;  
-}  
-#clock .digits div.dots:before {  
-    width: 5px;  
-    height: 5px;  
-    content: ' ';  
-    position: absolute;  
-    left: 0;  
-    top: 14px;  
-}  
-#clock .digits div.dots:after {  
-    width: 5px;  
-    height: 5px;  
-    content: ' ';  
-    position: absolute;  
-    left: 0;  
-    top: 14px;  
-}  
-#clock .digits div.dots:after {  
-    top: 34px;  
-}  
-#clock .alarm {  
-    width: 16px;  
-    height: 16px;  
-    bottom: 20px;  
-    background: url('../img/alarm_light.jpg');  
-    position: absolute;  
-    opacity: 0.2;  
-}  
-#clock .alarm.active {  
-    opacity: 1;  
-}  
-#clock .weekdays {  
-    font-size: 12px;  
-    position: absolute;  
-    width: 100%;  
-    top: 10px;  
-    left: 0;  
-    text-align: center;  
-}  
-#clock .weekdays span {  
-    opacity: 0.2;  
-    padding: 0 10px;  
-}  
-#clock .weekdays span.active {  
-    opacity: 1;  
-}  
-#clock .ampm {  
-    position: absolute;  
-    bottom: 20px;  
-    right: 20px;  
-    font-size: 12px;  
-}  
-.button-holder {  
-    text-align: center;  
-    padding-bottom: 100px;  
-}  
-a.button {  
-    background-color: #f6a7b3;  
-    background-image: -webkit-linear-gradient(top, #f6a7b3, #f0a3af);  
-    background-image: -moz-linear-gradient(top, #f6a7b3, #f0a3af);  
-    background-image: linear-gradient(top, #f6a7b3, #f0a3af);  
-    border: 1px solid #eb9ba7;  
-    border-radius: 2px;  
-    box-shadow: 0 2px 2px #ccc;  
-    color: #fff;  
-    text-decoration: none !important;  
-    padding: 15px 20px;  
-    display: inline-block;  
-    cursor: pointer;  
-}  
-a.button:hover {  
-    opacity: 0.9;  
-}  
-footer {  
-    width: 770px;  
-    font: normal 16px Arial, Helvetica, sans-serif;  
-    padding: 15px 35px;  
-    position: fixed;  
-    bottom: 0;  
-    left: 50%;  
-    margin-left: -420px;  
-    background-color:#1f1f1f;  
-    background-image: -webkit-linear-gradient(top, #1f1f1f, #101010);  
-    background-image: -moz-linear-gradient(top, #1f1f1f, #101010);  
-    background-image: linear-gradient(top, #1f1f1f, #101010);  
-    border-radius: 2px 2px 0 0;  
-    box-shadow: 0 -1px 4px rgba(0,0,0,0.4);  
-    z-index:1;  
-}  
-footer a.tz {  
-    font-weight: normal;  
-    font-size: 16px !important;  
-    text-decoration: none !important;  
-    display: block;  
-    margin-right: 300px;  
-    text-overflow: ellipsis;  
-    white-space: nowrap;  
-    color: #bfbfbf !important;  
-    z-index: 1;  
-}  
-footer a.tz:before {  
-    content: ' ';  
-    background: url('http://cdn.tutorialzine.com/misc/enhance/v2_footer_bg.png') no-repeat 0 -53px;  
-    width: 138px;  
-    height: 20px;  
-    display: inline-block;  
-    position: relative;  
-    bottom: -3px;  
-}  
-footer .close {  
-    position: absolute;  
-    cursor: pointer;  
-    width: 8px;  
-    height: 8px;  
-    background: url('http://cdn.tutorialzine.com/misc/enhance/v2_footer_bg.png') no-repeat 0 0px;  
-    top: 10px;  
-    right: 10px;  
-    z-index: 3;  
-}  
-footer #tzine-actions {  
-    position: absolute;  
-    top: 8px;  
-    width: 500px;  
-    right: 50%;  
-    margin-right: -650px;  
-    text-align: right;  
-    z-index: 2;  
-}  
-h1  {  
-  line-height: 2em;   
-  padding-bottom: 5px;  
-  text-transform: none;  
-  font-size: 1.7em;  
- font-weight: bold;  
-  font-style: italic;  
- font-family: "Lucida Console", "Courier New", monospace;  
-  color: #999;   
-  letter-spacing: -0.005em;  
-  word-spacing: 1px;  
-  letter-spacing: none;  
-}  
-h2  {  
-  margin-top: 40px;  
-  text-transform: none;  
-  font-size: 1.75em;  
-  font-weight: bold;  
-  font-family: "Lucida Console", "Courier New", monospace;  
-  color: #999;   
-  letter-spacing: -0.005em;   
-  word-spacing: 1px;  
-  letter-spacing: none;  
-}  
-footer #tzine-actions iframe {  
-    display: inline-block;  
-    height: 21px;  
-    width: 95px;  
-    position: relative;  
-    float: left;  
-    margin-top: 11px;  
-}  
-</style>  
-<body>  
-<div id = "clock" class = "light">  
-            <div class = "display">  
-                <div class = "weekdays"> </div>  
-                <div class = "ampm"> </div>  
-                <div class = "alarm"> </div>  
-                <div class = "digits"> </div>  
-            </div>  
-        </div>  
-        <div class = "button-holder">  
-            <a class = "button"> Switch Theme </a>  
-        </div>  
-<script>  
-$(function() {  
-    var clock = $('#clock'),  
-        alarm = clock.find('.alarm'),  
-        ampm = clock.find('.ampm');  
-        var digit_to_name = 'zero one two three four five six seven eight nine'.split(' ');  
-    var digits = {};  
-    var positions = [  
-        'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'  
-    ];  
-    var digit_holder = clock.find('.digits');  
-    $.each(positions, function(){  
-        if(this == ':') {  
-            digit_holder.append('<div class="dots">');  
-        }  
-        else {  
-            var pos = $('<div>');  
-            for(var i=1; i<8; i++) {  
-                pos.append('<span class="d' + i + '">');  
-            }  
-            digits[this] = pos;  
-            digit_holder.append(pos);  
-        }  
-    });  
-    var weekday_names = 'MON TUE WED THU FRI SAT SUN'.split(' '),  
-        weekday_holder = clock.find('.weekdays');  
-    $.each(weekday_names, function() {  
-        weekday_holder.append('<span>' + this + '</span>');  
-    });  
-    var weekdays = clock.find('.weekdays span');  
-    (function update_time() {  
-        var now = moment().format("hhmmssdA");  
-        digits.h1.attr('class', digit_to_name[now[0]]);  
-        digits.h2.attr('class', digit_to_name[now[1]]);  
-        digits.m1.attr('class', digit_to_name[now[2]]);  
-        digits.m2.attr('class', digit_to_name[now[3]]);  
-        digits.s1.attr('class', digit_to_name[now[4]]);  
-        digits.s2.attr('class', digit_to_name[now[5]]);  
-         var dow = now[6];  
-        dow--;  
-        if(dow < 0) {  
-            dow = 6;  
-        }    weekdays.removeClass('active').eq(dow).addClass('active');  
-        ampm.text(now[7]+now[8]);  
-        setTimeout(update_time, 1000);  
-    })();  
-    $('a.button').click(function() {  
-        clock.toggleClass('light dark');  
-    });  
-});  
-</script>  
-</body>  
-</html>  
+
+    <!-- Header / Home-->
+    <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+        <div class="w3-display-middle w3-text-white w3-center">
+            <h1 class="w3-jumbo">Radio Adhyatma Jyoti</h1>
+            <h1 class="w3-jumbo">104.8 MHz</h1>
+            <h1 class="w3-jumbo">LIVE</h1>
+
+            <h1> <div><script data-pagespeed-no-defer>//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://radioaj.com.np/index.html','82dtZm2p5Q',true,false,'n7R-N9EKVY4');
+//]]></script><img src="" data-pagespeed-url-hash="2441807540" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></div>
+    <audio controls="controls" autoplay="autoplay" src="https://radio-streaming-serv-1.hamropatro.com:8070/radio.mp3">
+    </audio>
+        </div> </h1>
+    </header>
+
+</body>
+
+</html>
